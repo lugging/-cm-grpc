@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package cm.yuntongxun.grpc.service.QueryUser;
+
+option java_multiple_files = false;
+option java_package = "cm.yuntongxun.grpc.service.user";
+option java_outer_classname = "QueryUser";
+
+service UserService {
+  rpc queryUser (queryUserReq) returns (QueryUserReply) {
+  }
+}
+
+message queryUserReq {
+  string name = 1;
+}
+
+message QueryUserReply {
+  string message = 1;
+  int32 age = 2;
+  sint64 ip = 3;
+}

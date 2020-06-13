@@ -1,0 +1,1 @@
+interface 项目 包含原始 protobuf 文件并生成 java model 和 service 类。 你可能会在不同的项目中会共享这个部分
