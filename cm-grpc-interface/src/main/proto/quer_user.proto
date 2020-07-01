@@ -16,6 +16,11 @@ message queryUserReq {
 }
 
 message QueryUserReply {
+  repeated UserInfo userInfo = 1;
+
+}
+
+message UserInfo {
   string message = 1;
   int32 age = 2;
   sint64 ip = 3;
