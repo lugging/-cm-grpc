@@ -36,6 +36,12 @@ public class EchoController {
         return ResponseEntity.ok(msg);
     }
 
+    @GetMapping("max")
+    public ResponseEntity<String> say(@RequestParam("size") int size){
+        String msg = echoService.maxSize(size);
+        return ResponseEntity.ok(msg);
+    }
+
     @GetMapping("user")
     public ResponseEntity<List<QueryUser.UserInfo>> user(@RequestParam("name") String name){
         List<QueryUser.UserInfo> userInfos = userService.receiveGreeting(name);

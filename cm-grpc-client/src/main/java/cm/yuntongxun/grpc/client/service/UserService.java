@@ -19,12 +19,13 @@ import java.util.List;
 public class UserService {
 
     @GrpcClient("userService")
-    private UserServiceGrpc.UserServiceBlockingStub stub;
+    private UserServiceGrpc.UserServiceBlockingStub stub1;
 
     public List<QueryUser.UserInfo> receiveGreeting(String name) {
         log.info("EchoService#receiveGreeting {}", name);
         QueryUser.queryUserReq req = QueryUser.queryUserReq.newBuilder().setName(name).build();
-        QueryUser.QueryUserReply reply = stub.queryUser(req);
-        return reply.getUserInfoList();
+        QueryUser.QueryUserReply reply1 = stub1.queryUser(req);
+        log.info("reply1 {}", reply1);
+        return reply1.getUserInfoList();
     }
 }
